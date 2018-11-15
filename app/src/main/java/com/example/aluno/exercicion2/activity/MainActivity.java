@@ -23,30 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Pega a referencia do ENDPOINT e do converter(gson)
-         * */
-        Retrofit retrofit = APIClient.getClient();
 
-        //Faz o 'bind' da instância do retrofit com interface
-        //que contém as operações (GET,POST,PUT,DELETE)
-        PostResource postResource = retrofit.create(PostResource.class);
-
-        //Faz a chamada do serviço
-        Call<List<Post>> get = postResource.get();
-
-        get.enqueue(new Callback<List<Post>>() {
-            @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                //Se deu certo executa este método
-                List<Post> posts = response.body();
-                posts.forEach(p-> Log.i  ("fasam",p.toString()));
-            }
-
-            @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
-                //Houve erro é executado este método.
-            }
-        });
 
     }
 }

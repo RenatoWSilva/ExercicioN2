@@ -2,63 +2,68 @@ package com.example.aluno.exercicion2.model;
 
 public class Post {
 
-    protected Integer userId;
+    private String cep;
+    private String logradouro;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String estado;
 
-    protected Integer id;
-
-    protected String title;
-
-    protected String body;
-
-    public Post() {
+    public String getCep() {
+        return cep;
     }
 
-    public Post(Integer userId, Integer id, String title, String body) {
-        this.userId = userId;
-        this.id = id;
-        this.title = title;
-        this.body = body;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
-    public Integer getId() {
-        return id;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
-    public String getTitle() {
-        return title;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public String getBody() {
-        return body;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return "Post{" +
-                "userId=" + userId +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                '}';
+        return "CEP: " + getCep()
+                + "\nLogradouro: " + getLogradouro()
+                + "\nComplemento: " + getComplemento()
+                + "\nBairro: " + getBairro()
+                + "\nCidade:" + getCidade()
+                + "\nEstado: " + getEstado();
     }
 }
